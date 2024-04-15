@@ -1,0 +1,7 @@
+[user]
+	name = Kevin Laude
+	email = nerfyoda@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.gitignore

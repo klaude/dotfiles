@@ -1,0 +1,49 @@
+#!/usr/bin/env zsh --no-rcs
+
+# My original prompt function, since replaced by powerlevel10k. I keep it in
+# case I need to refer back to my old prompt to check p10k compatibility. This
+# is a hacked up copy of the cloud prompt for oh-my-zsh and then prezto.
+function prompt_klaude_setup {
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  prompt_opts=(cr percent subst)
+
+  prompt_klaude_prefix=${1:-'★'}
+  prompt_klaude_primary_color=${2:-'cyan'}
+  prompt_klaude_secondary_color=${3:-'green'}
+  prompt_klaude_error_color=${4:-'red'}
+
+  local branch="%%B%F{$prompt_klaude_secondary_color}[%f%%b%%B%F{$prompt_klaude_primary_color}%b%f%%b%%B%F{$prompt_klaude_secondary_color}]%f%%b"
+  local action=" %%B%F{$prompt_klaude_error_color}(%a)%f%%b"
+
+  # Configure vcs_info
+  zstyle ':vcs_info:*' check-for-changes true
+  zstyle ':vcs_info:*' stagedstr ""
+  zstyle ':vcs_info:*' unstagedstr "%B%F{$prompt_klaude_error_color}🞭%f%b"
+
+  ## Determines the value when inside a version controled directory
+  #zstyle ':vcs_info:*' formats "${branch} %c%u"
+  zstyle ':vcs_info:*' formats "${branch} %u"
+
+  ## Determines the value during a merge, rebase, etc
+  #zstyle ':vcs_info:*' actionformats "${branch}${action} %c%u"
+  zstyle ':vcs_info:*' actionformats "${branch}${action} %u"
+
+  # To avoid conflicts with other uses of vcs_info, we reset the $PROMPT for every command
+  function set_prompt {
+    setopt PROMPT_SUBST
+
+    local prefix="%B%F{$prompt_klaude_primary_color}${prompt_klaude_prefix}%f%b"
+    local current_directory="%B%F{$prompt_klaude_secondary_color}%c%f%b"
+
+    vcs_info
+
+    PROMPT="${prefix}  ${current_directory} ${vcs_info_msg_0_} "
+    RPROMPT=''
+  }
+
+  add-zsh-hook precmd set_prompt
+}
+
+prompt_klaude_setup "$@"
