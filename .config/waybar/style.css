@@ -4,9 +4,9 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 window#waybar.hidden {
@@ -44,7 +44,7 @@ button {
 */
 
 #workspaces {
-    border-right: 1px solid #ffffff;
+    margin-right: 3px;
 }
 
 #workspaces button {
@@ -109,7 +109,7 @@ button {
 }
 
 #clock {
-    border-right: 1px solid #ffffff;
+    margin-right: 3px;
 }
 
 @keyframes blink {
@@ -135,7 +135,7 @@ label:focus {
 }
 
 #pulseaudio {
-    border-left: 1px solid #ffffff;
+    margin-left: 3px;
 }
 
 #pulseaudio.muted {
