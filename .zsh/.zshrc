@@ -173,23 +173,20 @@ export HISTSIZE HISTFILE SAVEHIST
 # Keyboard
 #--------------------
 
-if [[ ! -f ${ZDOTDIR}/zkbd/${TERM} ]]; then
-  autoload -Uz zkbd
-  zkbd
-  source ${ZDOTDIR}/zkbd/${TERM}
-fi
-
 bindkey -e
-[[ -n "${key[Home]}"       ]] && bindkey "${key[Home]}"       beginning-of-line
-[[ -n "${key[End]}"        ]] && bindkey "${key[End]}"        end-of-line
-[[ -n "${key[Insert]}"     ]] && bindkey "${key[Insert]}"     overwrite-mode
-[[ -n "${key[Delete]}"     ]] && bindkey "${key[Delete]}"     delete-char
-[[ -n "${key[Up]}"         ]] && bindkey "${key[Up]}"         up-line-or-search
-[[ -n "${key[Down]}"       ]] && bindkey "${key[Down]}"       down-line-or-search
-[[ -n "${key[Left]}"       ]] && bindkey "${key[Left]}"       backward-char
-[[ -n "${key[Right]}"      ]] && bindkey "${key[Right]}"      forward-char
-[[ -n "${key[Ctrl-Left]}"  ]] && bindkey "${key[Ctrl-Left]}"  backward-word
-[[ -n "${key[Ctrl-Right]}" ]] && bindkey "${key[Ctrl-Right]}" forward-word
+
+# Keys were captured via `cat`. This works when $TERM=xterm-kitty. Need to test
+# in other terminals and macOS. Might need to do a case on $TERM.
+bindkey "^[[D"    backward-char       # Left
+bindkey "^[[C"    forward-char        # Right
+bindkey "^[[A"    up-line-or-search   # Up
+bindkey "^[[B"    down-line-or-search # Down
+bindkey "^[[H"    beginning-of-line   # Home
+bindkey "^[[F"    end-of-line         # End
+bindkey "^[[1;5D" backward-word       # Ctrl-left
+bindkey "^[[1;5C" forward-word        # Ctrl-right
+bindkey "^[[2~"   overwrite-mode      # Insert
+bindkey "^[[3~"   delete-char         # Delete
 
 # Completion
 #--------------------
