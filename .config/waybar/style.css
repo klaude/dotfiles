@@ -221,3 +221,20 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    padding: 0 5px;
+}
+
+#custom-notification.notification {
+    background-color: #eb4d4b;
+    min-width: 1.2em;
+}
+
+#custom-notification.dnd-notification,
+#custom-notification.dnd-none,
+#custom-notification.dnd-inhibited-notification,
+#custom-notification.dnd-inhibited-none {
+    background-color: rgba(196, 196, 196, 0.3);
+}
