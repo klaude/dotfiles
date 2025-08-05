@@ -104,8 +104,8 @@ button {
 }
 
 #workspaces button:first-child:hover {
-    border-top-left-radius: 5;
-    border-bottom-left-radius: 5;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #clock {
