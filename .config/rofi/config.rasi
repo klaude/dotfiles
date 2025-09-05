@@ -27,11 +27,11 @@ configuration {
   text-color: rgb(255, 255, 255);
   foreground: rgb(255, 255, 255);
 
-  selected-normal-foreground:  var(foreground);
+  selected-normal-foreground: var(foreground);
 
   active-foreground: rgb(0, 142, 212);
   alternate-active-foreground: var(active-foreground);
-  selected-active-foreground:  var(active-foreground);
+  selected-active-foreground: var(foreground);
 
   urgent-foreground: var(foreground);
   alternate-urgent-foreground: var(foreground);
