@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.0);
   color: #ffffff;
   border-radius: 0px;
 }
@@ -67,7 +67,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 #workspaces button.focused {
