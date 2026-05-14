@@ -67,7 +67,7 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Toolkit Backend Variables
--- https://wiki.hypr.land/Configuring/Environment-variables#toolkit-backend-variables
+-- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables#toolkit-backend-variables
 -- GTK: Use wayland if available. If not: try x11, then any other GDK backend.
 hl.env("GDK_BACKEND", "wayland,x11,*")
 -- Qt: Use wayland if available, fall back to x11 if not.
@@ -80,7 +80,7 @@ hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("CLUTTER_BACKEND", "wayland")
 
 -- XDG Specifications
--- https://wiki.hypr.land/Configuring/Environment-variables#xdg-specifications
+-- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables#qt-variables
 -- XDG specific environment variables are often detected through portals and
 -- applications that may set those for you, however it is not a bad idea to set
 -- them explicitly.
@@ -89,7 +89,7 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
 -- Qt Variables
--- https://wiki.hypr.land/Configuring/Environment-variables#qt-variables
+-- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables#qt-variables
 -- (From the Qt documentation) enables automatic scaling, based on the monitor’s
 -- pixel density
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
