@@ -53,8 +53,15 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("nm-applet --indicator &")
     hl.exec_cmd("swaync &")
     hl.exec_cmd("blueman-applet &")
+
     -- Wallpaper
     hl.exec_cmd("swaybg --mode fill --image ~/Documents/Wallpapers/wallhaven-w58vvr.jpg")
+
+    -- User programs
+    hl.exec_cmd("/opt/1Password/1password", { workspace = 1 })
+    hl.exec_cmd("webcord", { workspace = 1 })
+    hl.exec_cmd("flatpak run org.signal.Signal", { workspace = 1 })
+    hl.exec_cmd("firefox", { workspace = 2 })
 end)
 
 -------------------------------
