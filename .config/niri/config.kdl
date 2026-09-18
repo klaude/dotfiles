@@ -278,7 +278,7 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
-  Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+  Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
   Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
   Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "niri msg action power-off-monitors && swaylock"; }
 
@@ -293,7 +293,7 @@ binds {
   // "-l 1.0" limits the volume to 100%.
   XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.0"; }
   XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
-  XF86AudioMute    allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+  XF86AudioMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
   XF86AudioMicMute   allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
   // Example media keys mapping using playerctl.
