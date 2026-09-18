@@ -15,7 +15,7 @@ that it will work for you. It's just a reference!
 * zsh
 * vim
 * git
-* Hyprland ecosystem
+* niri + accessories
 
 ## Stuff to maybe track
 
